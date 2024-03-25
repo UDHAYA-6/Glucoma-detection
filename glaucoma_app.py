@@ -19,7 +19,7 @@ def import_and_predict(image_data, model):
 model = tf.keras.models.load_model(r'my_model2.h5')
 
 st.write("""
-         # ***Glaucoma detector***
+         # ***Glaucoma detector using CNN and deep learning***
          """
          )
 
@@ -36,11 +36,12 @@ else:
     if(pred > 0.5):
         st.write("""
                  ## **Prediction:** Your eye is Healthy. Great!!
-                 """
+                 """,""" ## **Amount of prediction%: **""",pred
                  )
         st.balloons()
     else:
         st.write("""
                  ## **Prediction:** You are affected by Glaucoma. Please consult an ophthalmologist as soon as possible.
-                 """
+                 ""","Amount of prediction%: ",pred
                  )
+
